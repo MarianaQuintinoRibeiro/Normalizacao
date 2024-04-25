@@ -1,0 +1,65 @@
+create database home;
+
+use home;
+
+create table if not exists produtos (
+id_produtos int not null auto_increment,
+Sabores_Sorvete text,
+Preco varchar(5),
+Tipos_Sorvete text,
+primary key (id_produtos))
+default charset=utf8MB4;
+
+create table if not exists sobre (
+id_sobre int not null auto_increment,
+Data_Fundação varchar(20),
+Curiosidades text,
+Biografia_autor text,
+Localização varchar(100),
+primary key (id_sobre))
+default charset=utf8MB4;
+
+
+create table if not exists venda (
+id_venda int not null auto_increment,
+UltimasColeções text,
+Novidades Varchar(200),
+Preço_Tabela text,
+primary key (id_sobre))
+default charset=utf8MB4;
+
+create table if not exists login (
+id_login int not null auto_increment,
+CPF int unsigned,
+Nome Varchar(30),
+Telefone varchar(20),
+dataNascimento date,
+primary key (id_login))
+default charset=utf8MB4;
+
+
+insert into produtos (id_produtos, Sabores_Sorvete, Preco, Tipos_Sorvete)
+values (1, 'Morango', '15.00', 'Massa');
+
+insert into produtos (id_produtos, Sabores_Sorvete, Preco, Tipos_Sorvete)
+values (2, 'Napolitano', '25.00', 'Massa');
+
+insert into produtos (id_produtos, Sabores_Sorvete, Preco, Tipos_Sorvete)
+values (3, 'Chocolate Belga', '15.00', 'Massa');
+
+select * from produtos;
+
+insert into sobre (id_sobre, Data_Fundação, Curiosidades, Biografia_autor, Localização)
+values (1, '12/08/2010', 'Na Sorveteria contem Brinquedos para diversão da criançada', 'Mariana Quintino Ribeiro', 'São paulo');
+
+insert into sobre (id_sobre, Data_Fundação, Curiosidades, Biografia_autor, Localização)
+values (2, '12/08/2010', 'O Cliente pode personalizar seu proprio sorvete!', 'Possui um livro', 'São Caetano');
+
+insert into sobre (id_sobre, Data_Fundação, Curiosidades, Biografia_autor, Localização)
+values (3, '12/08/2010', 'Ao se cadastrar no dite e comprar um sorvete você concorre a um ingresso ao parque Disney!', 'Sua sobremesa favorita é o sorvete Limão do Mickey', 'Tocantins');
+
+select * from sobre;
+
+insert into venda (id_venda, UltimasColeções, Novidades, Preço_Tabela)
+values (1, 'Pote de sorvete das PrincesasDisney!!!', 'Agora se você leva um amigo ganha um sorvete gratis!', 'Semana 10 - lucro_ 3500.00');
+
